@@ -1,4 +1,34 @@
 
+
+
+
+
+function getRandomNum(){
+  return Math.floor(Math.random() * max);
+
+}
+
+function setBg(){
+  const date = new Date(),
+  hour = date.getHours();
+  
+  let body = document.querySelector('.body');
+
+  if (hour <= 6) {
+  
+    body.style.backgroundImage ="url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/morning/15.jpg')";
+  } else if (hour <= 12) {
+    body.style.backgroundImage ="url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/afternoon/15.jpg')";
+  } else if (hour <= 18) {
+    body.style.backgroundImage ="url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/15.jpg')";
+  } else {
+    body.style.backgroundImage ="url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/night/15.jpg')"
+  }
+}
+
+
+
+
 function showTime() {
   const now = new Date(),
     clock = document.querySelector("time");
@@ -6,8 +36,7 @@ function showTime() {
   setTimeout(showTime, 1000);
   setTimeout(showDate, 1000);
   setTimeout(getTimeOfDay,1000);
-
-
+    setTimeout(setBg,1000);
 }
 showTime();
 const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
@@ -172,22 +201,22 @@ audioClick.addEventListener('click', playPause);
 const playlist = [
   {
     title: 'AquaCaelestis',
-    src: '../assets/sounds/AquaCaelestis.mp3',
+    src: '../momentum/assets/sounds/AquaCaelestis.mp3',
     duration: '00:58'
   },
   {
     title: 'River Flows In You',
-    src: '../assets/sounds/River Flows In You.mp3',
+    src: '../momentum/assets/sounds/River Flows In You.mp3',
     duration: '03:50'
   },
   {
     title: 'Ennio Morricone',
-    src: '../assets/sounds/Ennio Morricone.mp3',
+    src: '../momentum/assets/sounds/Ennio Morricone.mp3',
     duration: '01:37'
   },
   {
     title: 'Summer Wind',
-    src: '../assets/sounds/Summer Wind.mp3',
+    src: '../momentum/assets/sounds/Summer Wind.mp3',
     duration: '01:50'
   }
 ]
@@ -205,3 +234,4 @@ playNext.addEventListener('click', randomPlay)
 const playPrev = document.getElementById('play-prev');
 
 playPrev.addEventListener('click', randomPlay) 
+

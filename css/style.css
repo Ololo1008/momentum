@@ -284,3 +284,9 @@ body {
     padding: 5px;
   }
 }
+footer .autor a{
+  color:lightslategrey;
+}
+.autor{
+  font-size:12px;
+}
